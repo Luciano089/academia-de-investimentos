@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primeiro Capítulo — Educação Financeira para Começar a Vida Adulta sem Dívidas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBFAF5;
+    --bg-raised: #F3F0E6;
+    --ink: #17241C;
+    --ink-soft: #46574B;
+    --line: #D8D2BE;
+    --gold: #9C6B12;
+    --gold-soft: #E9D8AE;
+    --green: #2E5339;
+    --green-soft: #DCE7DC;
+    --rust: #8C3B2E;
+    --rust-soft: #F1DDD6;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #14201A;
+      --bg-raised: #1B2A21;
+      --ink: #EDEAE0;
+      --ink-soft: #AEB8AC;
+      --line: #33443A;
+      --gold: #D9B15C;
+      --gold-soft: #3A3220;
+      --green: #7FAE8B;
+      --green-soft: #223328;
+      --rust: #D98A78;
+      --rust-soft: #3A2622;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14201A;
+    --bg-raised: #1B2A21;
+    --ink: #EDEAE0;
+    --ink-soft: #AEB8AC;
+    --line: #33443A;
+    --gold: #D9B15C;
+    --gold-soft: #3A3220;
+    --green: #7FAE8B;
+    --green-soft: #223328;
+    --rust: #D98A78;
+    --rust-soft: #3A2622;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { max-width: 100%; }
+
+  a { color: var(--gold); }
+
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+  }
+  .brand img {
+    height: 56px;
+    width: 56px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .brand span { color: var(--gold); }
+  .topnav {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .topnav::-webkit-scrollbar { display: none; }
+  .topnav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+  }
+  .topnav a:hover { color: var(--ink); border-color: var(--gold); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    padding: 64px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--green);
+    letter-spacing: 0.06em;
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+    line-height: 1.08;
+    margin: 0 0 20px;
+    max-width: 14ch;
+  }
+  .hero p.lead {
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 28px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 3px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--ink);
+  }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-ghost { background: transparent; color: var(--ink); }
+
+  .hero-chart {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 26px 24px 20px;
+  }
+  .hero-chart h3 {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .hero-chart .sub {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed var(--line);
+    margin-top: 14px;
+    padding-top: 12px;
+    font-family: var(--mono);
+  }
+  .result-row div span.big {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .result-row .a .big { color: var(--ink-soft); }
+  .result-row .b .big { color: var(--green); }
+
+  /* ---------- layout: ledger index + content ---------- */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    padding: 52px 0 90px;
+  }
+  .index-col {
+    position: sticky;
+    top: 76px;
+    align-self: start;
+    height: max-content;
+  }
+  .index-col ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid var(--line);
+  }
+  .index-col li { margin: 0; }
+  .index-col a {
+    display: block;
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    padding: 9px 0 9px 16px;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+  }
+  .index-col a .num {
+    font-family: var(--mono);
+    color: var(--gold);
+    margin-right: 8px;
+  }
+  .index-col a:hover, .index-col a.active {
+    color: var(--ink);
+    border-left-color: var(--gold);
+  }
+
+  main { min-width: 0; }
+  section.chapter {
+    padding-top: 6px;
+    margin-bottom: 76px;
+    scroll-margin-top: 84px;
+  }
+  section.chapter:last-child { margin-bottom: 0; }
+  .chapter-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    margin: 0 0 10px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+    margin: 0 0 18px;
+    max-width: 22ch;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.12rem;
+    margin: 28px 0 10px;
+  }
+  .chapter p {
+    max-width: 68ch;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+  .chapter p strong { color: var(--ink); font-weight: 600; }
+
+  .callout {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px 20px;
+    max-width: 68ch;
+    margin: 20px 0;
+  }
+  .callout.warn { background: var(--rust-soft); border-color: color-mix(in srgb, var(--rust) 40%, var(--line)); }
+  .callout.tip { background: var(--green-soft); border-color: color-mix(in srgb, var(--green) 35%, var(--line)); }
+  .callout p { color: var(--ink); margin: 0; max-width: none; }
+  .callout p + p { margin-top: 8px; }
+  .callout-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink-soft);
+  }
+
+  /* triangle: liquidez / risco / rentabilidade */
+  .tradeoff {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 22px 0 10px;
+  }
+  .tradeoff .pill {
+    flex: 1 1 160px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 16px;
+    background: var(--bg-raised);
+  }
+  .tradeoff .pill .label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .tradeoff .pill p { margin: 0; font-size: 0.86rem; color: var(--ink-soft); }
+
+  /* comparison table for renda fixa vs variavel */
+  .compare {
+    width: 100%;
+    max-width: 72ch;
+    border-collapse: collapse;
+    margin: 18px 0 8px;
+    font-size: 0.92rem;
+  }
+  .compare th, .compare td {
+    text-align: left;
+    padding: 10px 14px 10px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .compare th {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .compare td.name { font-weight: 600; }
+  .table-scroll { overflow-x: auto; max-width: 72ch; }
+
+  /* risk profiles */
+  .profiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0 10px;
+    max-width: 78ch;
+  }
+  .profile-card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px 16px;
+  }
+  .profile-card h4 {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    margin: 0 0 8px;
+  }
+  .profile-card p { font-size: 0.85rem; color: var(--ink-soft); margin: 0; max-width: none; }
+  .profile-card .bar {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--line);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .profile-card .bar i { display: block; height: 100%; background: var(--gold); }
+
+  /* trap list */
+  .traps { max-width: 70ch; }
+  .trap {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+  }
+  .trap:last-child { border-bottom: 1px solid var(--line); }
+  .trap .x {
+    font-family: var(--mono);
+    color: var(--rust);
+    font-weight: 600;
+  }
+  .trap h4 { margin: 0 0 4px; font-family: var(--serif); font-size: 1rem; font-weight: 600; }
+  .trap p { margin: 0; font-size: 0.88rem; }
+
+  /* glossary */
+  .glossary {
+    columns: 2;
+    column-gap: 40px;
+    max-width: 78ch;
+  }
+  .gterm {
+    break-inside: avoid;
+    margin-bottom: 18px;
+  }
+  .gterm dt {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--gold);
+  }
+  .gterm dd {
+    margin: 4px 0 0;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+
+  /* checklist */
+  .checklist { max-width: 62ch; margin-top: 8px; }
+  .checkitem {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .checkitem input[type="checkbox"] {
+    appearance: none;
+    width: 18px; height: 18px;
+    border: 1.5px solid var(--ink-soft);
+    border-radius: 3px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+  }
+  .checkitem input[type="checkbox"]:checked {
+    background: var(--green);
+    border-color: var(--green);
+  }
+  .checkitem input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: var(--bg);
+    position: absolute;
+    left: 3px; top: -2px;
+    font-size: 12px;
+  }
+  .checkitem label { font-size: 0.94rem; cursor: pointer; }
+  .checkitem label b { display: block; margin-bottom: 2px; }
+  .checkitem label span { color: var(--ink-soft); font-size: 0.86rem; }
+
+  /* calculator */
+  .calc {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--bg-raised);
+    padding: 26px 26px 22px;
+    max-width: 78ch;
+  }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+  .field label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .field input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 9px 10px;
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .field input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .calc-out {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    border-top: 1px dashed var(--line);
+    padding-top: 16px;
+  }
+  .calc-out .item .k {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .calc-out .item .v {
+    font-family: var(--mono);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .calc-out .item.total .v { color: var(--green); }
+  .calc-bar {
+    margin-top: 16px;
+    height: 10px;
+    background: var(--line);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+  }
+  .calc-bar .seg-in { background: var(--ink-soft); }
+  .calc-bar .seg-growth { background: var(--green); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 34px 0 48px;
+  }
+  footer p {
+    max-width: 68ch;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+  footer .fbrand {
+    font-family: var(--serif);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  /* ---------- jogo: corrida do investidor ---------- */
+  .game-track {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 26px 22px 20px;
+    max-width: 78ch;
+    margin: 22px 0 26px;
+  }
+  .game-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; flex-wrap: wrap; gap: 8px; }
+  .game-top .level-label { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); }
+  .game-top .level-label b { color: var(--ink); font-size: 1rem; }
+  .game-stat-row { display: flex; gap: 18px; font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); }
+  .game-stat-row b { color: var(--green); }
+  .road { position: relative; height: 68px; margin: 6px 0 12px; }
+  .road-line {
+    position: absolute; top: 44px; left: 4px; right: 4px; height: 3px;
+    background: repeating-linear-gradient(90deg, var(--line) 0 10px, transparent 10px 20px);
+  }
+  .road-base { position: absolute; top: 40px; left: 0; right: 0; height: 11px; background: var(--line); opacity: 0.35; border-radius: 6px; }
+  .checkpoints { position: absolute; top: 40px; left: 4px; right: 4px; height: 11px; display: flex; justify-content: space-between; align-items: center; }
+  .checkpoint { width: 8px; height: 8px; border-radius: 50%; background: var(--bg); border: 2px solid var(--line); transition: all 0.3s ease; }
+  .checkpoint.done { background: var(--green); border-color: var(--green); }
+  .checkpoint.now { border-color: var(--gold); background: var(--gold-soft); transform: scale(1.3); }
+  .flag { position: absolute; right: -2px; top: 4px; font-size: 20px; }
+  .car {
+    position: absolute; top: -2px; left: 0;
+    transition: left 0.7s cubic-bezier(.4,1.4,.4,1);
+    font-size: 30px; line-height: 1;
+    filter: drop-shadow(0 3px 2px rgba(0,0,0,0.18));
+    transform: scaleX(-1);
+  }
+  .car.shake { animation: carShake 0.4s ease; }
+  @keyframes carShake {
+    0%, 100% { transform: scaleX(-1) translateX(0) rotate(0); }
+    25% { transform: scaleX(-1) translateX(-4px) rotate(3deg); }
+    75% { transform: scaleX(-1) translateX(4px) rotate(-3deg); }
+  }
+  .car.zoom { animation: carZoom 0.7s ease; }
+  @keyframes carZoom {
+    0% { transform: scaleX(-1) scale(1); }
+    40% { transform: scaleX(-1) scale(1.18) rotate(2deg); }
+    100% { transform: scaleX(-1) scale(1); }
+  }
+  .qcard {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+    padding: 26px 22px; max-width: 78ch;
+  }
+  .qcard .chapter-tag { font-family: var(--mono); font-size: 0.72rem; color: var(--gold); margin: 0 0 10px; }
+  .qcard h3.qtext { font-family: var(--serif); font-weight: 600; font-size: 1.22rem; line-height: 1.3; margin: 0 0 20px; max-width: 44ch; }
+  .options { display: grid; gap: 10px; margin-bottom: 6px; }
+  .opt {
+    text-align: left; background: var(--bg-raised); border: 1px solid var(--line); border-radius: 4px;
+    padding: 13px 16px; font-family: var(--sans); font-size: 0.95rem; color: var(--ink);
+    cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease; width: 100%;
+  }
+  .opt:hover:not(:disabled) { border-color: var(--gold); }
+  .opt:disabled { cursor: default; }
+  .opt.correct { background: var(--green-soft); border-color: var(--green); font-weight: 600; }
+  .opt.wrong { background: var(--rust-soft); border-color: var(--rust); }
+  .opt.dim { opacity: 0.55; }
+  .game-feedback {
+    margin-top: 16px; padding: 14px 16px; border-radius: 4px; font-size: 0.9rem; display: none; max-width: none;
+  }
+  .game-feedback.show { display: block; }
+  .game-feedback.ok { background: var(--green-soft); border: 1px solid color-mix(in srgb, var(--green) 40%, var(--line)); color: var(--ink); }
+  .game-feedback.bad { background: var(--rust-soft); border: 1px solid color-mix(in srgb, var(--rust) 40%, var(--line)); color: var(--ink); }
+  .game-feedback .flabel { font-family: var(--mono); font-size: 0.72rem; display: block; margin-bottom: 6px; color: var(--ink-soft); }
+  .qactions { margin-top: 18px; display: flex; gap: 12px; }
+  .game-finish {
+    display: none; background: var(--bg-raised); border: 1px solid var(--line); border-radius: 6px;
+    padding: 40px 28px; text-align: center; max-width: 78ch;
+  }
+  .game-finish.show { display: block; }
+  .game-finish .medal { font-size: 44px; margin-bottom: 14px; }
+  .game-finish h3 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 10px; }
+  .game-finish p { color: var(--ink-soft); max-width: 48ch; margin: 0 auto 20px; }
+  .finish-stats { display: flex; justify-content: center; gap: 30px; margin-bottom: 26px; font-family: var(--mono); }
+  .finish-stats div .k { font-size: 0.72rem; color: var(--ink-soft); display: block; }
+  .finish-stats div .v { font-size: 1.3rem; font-weight: 600; color: var(--green); }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .body-grid { grid-template-columns: 1fr; gap: 8px; padding-top: 30px; }
+    .index-col {
+      position: sticky;
+      top: 60px;
+      background: var(--bg);
+      z-index: 20;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .index-col ol {
+      display: flex;
+      overflow-x: auto;
+      border-left: none;
+      gap: 4px;
+      padding-bottom: 6px;
+    }
+    .index-col a {
+      border-left: none;
+      border-bottom: 2px solid transparent;
+      padding: 8px 12px;
+      white-space: nowrap;
+    }
+    .index-col a:hover, .index-col a.active { border-bottom-color: var(--gold); }
+    .profiles { grid-template-columns: 1fr; }
+    .glossary { columns: 1; }
+    .topnav { display: none; }
+    .car { font-size: 24px; }
+    .finish-stats { gap: 18px; }
+  }
+
+  /* ---------- adaptação a telas ---------- */
+  @media (min-width: 1500px) {
+    .wrap, .topbar-inner { max-width: 1280px; }
+  }
+  @media (max-width: 1000px) {
+    .hero-grid { gap: 36px; }
+    .body-grid { gap: 36px; }
+  }
+  @media (max-width: 860px) {
+    .hero-grid > *, .body-grid > * { min-width: 0; }
+    .wrap { padding: 0 18px; }
+    .topbar-inner { padding: 10px 18px; }
+    .brand { font-size: 1.05rem; }
+    .brand img { height: 40px; width: 40px; }
+    .hero { padding: 36px 0 28px; }
+    h1 { max-width: 20ch; }
+    h2 { max-width: none; }
+    section.chapter { scroll-margin-top: 130px; margin-bottom: 56px; }
+  }
+  @media (max-width: 600px) {
+    .table-scroll { overflow-x: visible; }
+    .compare, .compare tbody, .compare tr, .compare td { display: block; width: 100%; }
+    .compare tr:first-child { display: none; }
+    .compare tr { padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .compare td { border: none; padding: 3px 0; }
+    .compare td::before {
+      content: attr(data-label);
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-soft);
+    }
+    .compare td.name { font-size: 1rem; }
+    .compare td.name::before { display: none; }
+  }
+  @media (max-width: 560px) {
+    .svg-t { font-size: 12px; }
+    .hero-chart { padding: 20px 16px 16px; }
+    .result-row { flex-wrap: wrap; gap: 12px 20px; }
+    .chart-legend { flex-wrap: wrap; gap: 8px 16px; }
+    .hero-actions .btn { flex: 1 1 100%; text-align: center; }
+    .btn { padding: 13px 18px; }
+    .calc { padding: 20px 16px 16px; }
+    .calc-out { gap: 16px 24px; }
+    .calc-out .item .v { font-size: 1.1rem; }
+    .field input { font-size: 1rem; }
+    .index-col a { padding: 8px 10px; }
+    .checkitem { gap: 12px; }
+    .game-track { padding: 20px 14px 16px; }
+    .qcard { padding: 20px 14px; }
+    .qcard h3.qtext { font-size: 1.1rem; }
+    .opt { padding: 14px; font-size: 0.92rem; }
+    .qactions .btn { width: 100%; }
+    .game-finish { padding: 30px 16px; }
+  }
+  @media (max-width: 360px) {
+    h1 { font-size: 1.9rem; }
+    .brand { font-size: 0.95rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  #debtBar .seg-growth { background: var(--rust); }
+  .calc + .calc { margin-top: 28px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><img src="data:image/png;base64,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" alt="Logo Universidade Salvador (UNIFACS)">Primeiro <span>Capítulo</span></div>
+    <nav class="topnav">
+      <a href="#organizar">Organizar</a>
+      <a href="#juros">Juros</a>
+      <a href="#tipos">Crédito</a>
+      <a href="#perfil">Hábitos e metas</a>
+      <a href="#armadilhas">Armadilhas</a>
+      <a href="#glossario">Glossário</a>
+      <a href="#checklist">Primeiros passos</a>
+      <a href="#jogo">Jogue</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">GUIA INTRODUTÓRIO · DINHEIRO SEM DÍVIDAS</p>
+      <h1>Como usar o primeiro salário sem cair em dívidas</h1>
+      <p class="lead">Um guia direto para quem está começando a ganhar o próprio dinheiro: como organizar o que entra, por que o crédito fácil sai caro e como guardar para comprar à vista, sem depender de parcelas, cartão estourado ou cheque especial.</p>
+      <div class="hero-actions">
+        <a href="#organizar" class="btn btn-primary">Começar pelo básico</a>
+        <a href="#juros" class="btn btn-ghost">Ver quanto o crédito custa</a>
+      </div>
+    </div>
+    <div class="hero-chart">
+      <h3>Parcelar com juros ou guardar e comprar à vista</h3>
+      <p class="sub">Exemplo ilustrativo: um celular de R$ 2.000, parcelado em 12x de R$ 230 ou comprado depois de guardar R$ 200 por mês durante 10 meses.</p>
+      <svg viewBox="0 0 420 170" role="img" aria-label="Comparação entre parcelar um produto de R$ 2.000 com juros, pagando R$ 2.760, e guardar para comprar à vista por R$ 2.000">
+        <text x="30" y="20" class="svg-t" font-family="IBM Plex Mono" font-size="9" fill="var(--ink-soft)">Parcelando em 12x de R$ 230</text>
+        <rect x="30" y="28" width="268" height="34" fill="var(--green)"/>
+        <rect x="298" y="28" width="102" height="34" fill="var(--rust)"/>
+        <text x="305" y="49" class="svg-t" font-family="IBM Plex Mono" font-size="10" fill="var(--bg)">juros</text>
+        <text x="30" y="98" class="svg-t" font-family="IBM Plex Mono" font-size="9" fill="var(--ink-soft)">Guardando R$ 200 por mês, por 10 meses</text>
+        <rect x="30" y="106" width="268" height="34" fill="var(--green)"/>
+        <line x1="298" y1="22" x2="298" y2="150" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="306" y="128" class="svg-t" font-family="IBM Plex Mono" font-size="9" fill="var(--ink-soft)">R$ 760 a menos</text>
+      </svg>
+      <div class="chart-legend">
+        <span><i class="dot" style="background:var(--green)"></i> preço do produto</span>
+        <span><i class="dot" style="background:var(--rust)"></i> juros do parcelamento</span>
+      </div>
+      <div class="result-row">
+        <div class="a"><span class="k">total parcelando</span><span class="big">R$ 2.760</span></div>
+        <div class="b"><span class="k">total guardando antes</span><span class="big">R$ 2.000</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap body-grid">
+  <nav class="index-col" aria-label="Sumário">
+    <ol>
+      <li><a href="#organizar"><span class="num">01</span>Organize o dinheiro</a></li>
+      <li><a href="#juros"><span class="num">02</span>Juros: o preço de pagar depois</a></li>
+      <li><a href="#tipos"><span class="num">03</span>Cartão, parcelas e crédito</a></li>
+      <li><a href="#perfil"><span class="num">04</span>Hábitos e metas</a></li>
+      <li><a href="#armadilhas"><span class="num">05</span>Armadilhas comuns</a></li>
+      <li><a href="#glossario"><span class="num">06</span>Glossário rápido</a></li>
+      <li><a href="#checklist"><span class="num">07</span>Primeiros passos</a></li>
+      <li><a href="#jogo"><span class="num">08</span>Jogue: Corrida Sem Dívidas</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section class="chapter" id="organizar">
+      <p class="chapter-eyebrow">CAPÍTULO 01</p>
+      <h2>Saiba para onde vai o seu dinheiro</h2>
+      <p>A maioria das dívidas de quem está começando não nasce de uma grande compra, e sim de gastar um pouco mais do que ganha, mês após mês, sem perceber. Por isso o primeiro passo é enxergar o que entra e o que sai.</p>
+
+      <h3>Uma forma simples de dividir a renda</h3>
+      <p>Uma regra bastante usada é dividir a renda líquida em três blocos: <strong>50% para o essencial</strong> (moradia, transporte, alimentação, contas fixas), <strong>30% para desejos</strong> (lazer, assinaturas, saídas) e <strong>20% para o futuro</strong> (guardar dinheiro e quitar dívidas, se houver). Não precisa ser exato. Se o essencial já passa de 50%, corte primeiro dos desejos, não da parte que você guarda.</p>
+
+      <div class="callout tip">
+        <span class="callout-label">IDEIA CENTRAL</span>
+        <p>A regra de ouro para não se endividar é gastar menos do que ganha. Guarde assim que o dinheiro entra, não o que sobra no fim do mês: se depender do que “sobra”, quase sempre não sobra nada.</p>
+      </div>
+
+      <h3>Comece uma reserva de emergência</h3>
+      <p>Imprevistos acontecem: o celular quebra, o emprego acaba, surge uma consulta. Sem reserva, o jeito é recorrer ao cartão, ao cheque especial ou a um empréstimo, justamente os caminhos mais caros. Comece com uma meta pequena, como o valor de um mês de gastos essenciais, e avance até <strong>3 a 6 meses</strong>. Deixe esse dinheiro separado, em uma conta de acesso fácil ou na poupança, longe da tentação do dia a dia.</p>
+    </section>
+
+    <section class="chapter" id="juros">
+      <p class="chapter-eyebrow">CAPÍTULO 02</p>
+      <h2>Juros: o preço de pagar depois</h2>
+      <p>Juros compostos significam que os juros de um mês passam a render juros no mês seguinte. Para quem guarda dinheiro, isso é bom. Para quem deve, é o contrário: a dívida cresce cada vez mais rápido, e quanto mais tempo passa, mais difícil fica sair dela. Simule abaixo.</p>
+
+      <div class="calc" id="calculator">
+        <h3 style="margin-top:0">Quanto uma dívida cresce se ninguém paga</h3>
+        <div class="calc-grid">
+          <div class="field">
+            <label for="dPrincipal">Valor da dívida (R$)</label>
+            <input type="number" id="dPrincipal" value="1000" min="0" step="100">
+          </div>
+          <div class="field">
+            <label for="dRate">Juros (% ao mês)</label>
+            <input type="number" id="dRate" value="8" min="0" step="0.5">
+          </div>
+          <div class="field">
+            <label for="dMonths">Meses sem pagar</label>
+            <input type="number" id="dMonths" value="6" min="0" max="120" step="1">
+          </div>
+        </div>
+        <div class="calc-out">
+          <div class="item">
+            <span class="k">valor original</span>
+            <span class="v" id="outOrig">R$ 0</span>
+          </div>
+          <div class="item total">
+            <span class="k">total devido</span>
+            <span class="v" id="outDebt">R$ 0</span>
+          </div>
+          <div class="item">
+            <span class="k">só de juros</span>
+            <span class="v" id="outInterest">R$ 0</span>
+          </div>
+        </div>
+        <div class="calc-bar" id="debtBar">
+          <div class="seg-in" id="barOrig" style="width:50%"></div>
+          <div class="seg-growth" id="barInterest" style="width:50%"></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="callout-label">NA PRÁTICA</span>
+        <p>A taxa do simulador é apenas um exemplo. As taxas reais variam bastante entre produtos e instituições, e as do cartão rotativo e do cheque especial estão entre as mais altas do mercado. Antes de qualquer crédito, peça o CET (Custo Efetivo Total): ele mostra o custo completo, não só a taxa mensal.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="tipos">
+      <p class="chapter-eyebrow">CAPÍTULO 03</p>
+      <h2>Cartão, parcelas e crédito: o que cada um cobra de você</h2>
+      <p>Todo crédito é dinheiro que você usa hoje e paga amanhã, sempre com algum custo. Antes de aceitar qualquer oferta, responda três perguntas:</p>
+
+      <div class="tradeoff">
+        <div class="pill"><span class="label">PRECISO?</span><p>É uma necessidade ou um desejo do momento?</p></div>
+        <div class="pill"><span class="label">POSSO PAGAR À VISTA?</span><p>Se eu guardar por alguns meses, consigo comprar sem juros?</p></div>
+        <div class="pill"><span class="label">CABE NO MÊS QUE VEM?</span><p>A parcela cabe no orçamento sem apertar o essencial?</p></div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="compare">
+          <tr><th>Produto</th><th>Como funciona</th><th>Cuidado</th></tr>
+          <tr><td class="name" data-label="Produto">Cartão de crédito</td><td data-label="Como funciona">Você compra agora e paga na fatura do mês seguinte</td><td data-label="Cuidado">Pagar só o mínimo joga o restante no rotativo, com juros muito altos</td></tr>
+          <tr><td class="name" data-label="Produto">Parcelado (cartão ou loja)</td><td data-label="Como funciona">A compra é dividida em parcelas, com ou sem juros</td><td data-label="Cuidado">Várias parcelas juntas comprometem a renda dos meses seguintes</td></tr>
+          <tr><td class="name" data-label="Produto">Cheque especial</td><td data-label="Como funciona">Limite da conta corrente que cobre o saldo negativo</td><td data-label="Cuidado">Juros altos; no máximo para emergências de poucos dias</td></tr>
+          <tr><td class="name" data-label="Produto">Empréstimo pessoal</td><td data-label="Como funciona">O banco ou a financeira entrega o dinheiro, e você paga em parcelas</td><td data-label="Cuidado">Compare o CET e evite contratar por impulso</td></tr>
+        </table>
+      </div>
+
+      <p>Na maioria das vezes, guardar primeiro e pagar à vista é o caminho mais barato. Mesmo quando a parcela vem “sem juros”, ela ocupa uma parte da sua renda futura.</p>
+    </section>
+
+    <section class="chapter" id="perfil">
+      <p class="chapter-eyebrow">CAPÍTULO 04</p>
+      <h2>Hábitos e metas que mantêm você no azul</h2>
+      <p>Quanto da sua renda já está comprometida com parcelas? Essa conta mostra o quanto você está perto do perigo. Use a referência abaixo, que é didática e não uma regra oficial.</p>
+
+      <div class="profiles">
+        <div class="profile-card">
+          <div class="bar"><i style="width:30%"></i></div>
+          <h4>Tranquilo</h4>
+          <p>Parcelas somam até cerca de 15% da renda. Há folga para imprevistos e para continuar guardando.</p>
+        </div>
+        <div class="profile-card">
+          <div class="bar"><i style="width:60%"></i></div>
+          <h4>Atenção</h4>
+          <p>Entre 15% e 30%. Qualquer imprevisto já aperta o orçamento: evite novas parcelas.</p>
+        </div>
+        <div class="profile-card">
+          <div class="bar"><i style="width:90%"></i></div>
+          <h4>Perigo</h4>
+          <p>Acima de 30%. O risco de atrasar contas é alto: pare de parcelar e negocie o que for possível.</p>
+        </div>
+      </div>
+
+      <h3>Transforme o desejo em meta com data</h3>
+      <p>Em vez de parcelar, escolha o valor e o prazo e calcule quanto guardar por mês. Colocar a meta em números muda a conversa: o que parecia “caro demais” vira “dá em 8 meses”.</p>
+
+      <div class="calc" id="goalCalc">
+        <h3 style="margin-top:0">Quanto guardar para comprar à vista</h3>
+        <div class="calc-grid">
+          <div class="field">
+            <label for="gPrice">Preço do que quer (R$)</label>
+            <input type="number" id="gPrice" value="2000" min="0" step="100">
+          </div>
+          <div class="field">
+            <label for="gSaved">Já guardado (R$)</label>
+            <input type="number" id="gSaved" value="0" min="0" step="50">
+          </div>
+          <div class="field">
+            <label for="gMonths">Prazo (meses)</label>
+            <input type="number" id="gMonths" value="10" min="1" max="120" step="1">
+          </div>
+        </div>
+        <div class="calc-out">
+          <div class="item">
+            <span class="k">falta guardar</span>
+            <span class="v" id="outRest">R$ 0</span>
+          </div>
+          <div class="item total">
+            <span class="k">guardar por mês</span>
+            <span class="v" id="outMonthly">R$ 0</span>
+          </div>
+          <div class="item">
+            <span class="k">por semana</span>
+            <span class="v" id="outWeekly">R$ 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip">
+        <span class="callout-label">DICA</span>
+        <p>Transfira o valor para uma conta separada no dia em que o salário cair. Assim ele não se mistura com o dinheiro do mês e não vira gasto sem você perceber.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="armadilhas">
+      <p class="chapter-eyebrow">CAPÍTULO 05</p>
+      <h2>Armadilhas que levam à dívida</h2>
+      <p>Quase ninguém se endivida de propósito. Estes são os caminhos mais comuns.</p>
+
+      <div class="traps">
+        <div class="trap">
+          <span class="x">✕</span>
+          <div><h4>Pagar só o mínimo da fatura</h4><p>O restante entra no rotativo, com juros muito altos. Se não der para pagar tudo, procure o banco para parcelar a fatura antes de o rotativo começar a pesar.</p></div>
+        </div>
+        <div class="trap">
+          <span class="x">✕</span>
+          <div><h4>Tratar o limite do cartão como renda</h4><p>O limite é crédito do banco, não dinheiro seu. Gastar até o limite todo mês é o caminho mais curto para uma fatura que não fecha.</p></div>
+        </div>
+        <div class="trap">
+          <span class="x">✕</span>
+          <div><h4>Parcelar tudo porque “a parcela cabe”</h4><p>Uma parcela pequena parece inofensiva, mas várias juntas ocupam meses de renda. Some todas antes de decidir.</p></div>
+        </div>
+        <div class="trap">
+          <span class="x">✕</span>
+          <div><h4>Comprar por impulso e por promoção</h4><p>Black Friday, cupom e “últimas unidades” foram feitos para você decidir rápido. Espere alguns dias e veja se a vontade continua.</p></div>
+        </div>
+        <div class="trap">
+          <span class="x">✕</span>
+          <div><h4>Bets e jogos de azar</h4><p>Apostas online prometem dinheiro fácil, mas quem perde costuma buscar crédito para tentar recuperar o prejuízo, e a dívida só cresce.</p></div>
+        </div>
+        <div class="trap">
+          <span class="x">✕</span>
+          <div><h4>Emprestar o cartão ou o nome</h4><p>Se a outra pessoa não pagar, a cobrança chega até você. Só ajude se puder arcar com a dívida inteira sozinho.</p></div>
+        </div>
+        <div class="trap">
+          <span class="x">✕</span>
+          <div><h4>Promessas de “limpar o nome” com pagamento adiantado</h4><p>Cobrar antes de resolver é sinal clássico de golpe. Negocie por canais oficiais do credor e desconfie de contatos que chegam sem você pedir.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="glossario">
+      <p class="chapter-eyebrow">CAPÍTULO 06</p>
+      <h2>Glossário rápido</h2>
+      <p>Termos que aparecem sempre que você contrata, paga ou renegocia um crédito.</p>
+
+      <dl class="glossary">
+        <div class="gterm"><dt>Juros</dt><dd>O custo de usar o dinheiro de outra pessoa ou instituição por um tempo. Quanto maior a taxa e o prazo, mais caro fica.</dd></div>
+        <div class="gterm"><dt>CET</dt><dd>Custo Efetivo Total: soma juros, tarifas, seguros e impostos. É o número que mostra o preço real do crédito e permite comparar ofertas.</dd></div>
+        <div class="gterm"><dt>Pagamento mínimo</dt><dd>O menor valor aceito para quitar a fatura do cartão. O que sobra continua sendo dívida, com juros.</dd></div>
+        <div class="gterm"><dt>Rotativo</dt><dd>Crédito que o cartão aplica quando a fatura não é paga por inteiro. Está entre as modalidades mais caras do mercado.</dd></div>
+        <div class="gterm"><dt>Inadimplência</dt><dd>Situação de quem está com uma conta ou dívida em atraso após o vencimento.</dd></div>
+        <div class="gterm"><dt>Negativado</dt><dd>Quando o nome entra em cadastros de devedores, como Serasa e SPC, por dívida em atraso. Isso dificulta conseguir crédito.</dd></div>
+        <div class="gterm"><dt>Renegociação</dt><dd>Novo acordo com o credor para pagar uma dívida atrasada, com novo prazo, desconto ou parcelas diferentes.</dd></div>
+        <div class="gterm"><dt>Reserva de emergência</dt><dd>Dinheiro guardado para imprevistos, equivalente a alguns meses de gastos essenciais.</dd></div>
+      </dl>
+    </section>
+
+    <section class="chapter" id="checklist">
+      <p class="chapter-eyebrow">CAPÍTULO 07</p>
+      <h2>Primeiros passos práticos</h2>
+      <p>Uma ordem razoável para sair do zero e ficar longe das dívidas. Marque conforme for avançando.</p>
+
+      <div class="checklist">
+        <div class="checkitem">
+          <input type="checkbox" id="c1"><label for="c1"><b>Anote tudo o que entra e sai por um mês</b><span>Inclua os gastos pequenos: é impossível controlar o que você não enxerga.</span></label>
+        </div>
+        <div class="checkitem">
+          <input type="checkbox" id="c2"><label for="c2"><b>Separe um valor para guardar assim que o dinheiro entrar</b><span>Pode ser pequeno. O hábito pesa mais do que o valor no começo.</span></label>
+        </div>
+        <div class="checkitem">
+          <input type="checkbox" id="c3"><label for="c3"><b>Monte sua reserva de emergência</b><span>Comece com um mês de gastos essenciais e avance até 3 a 6 meses.</span></label>
+        </div>
+        <div class="checkitem">
+          <input type="checkbox" id="c4"><label for="c4"><b>Pague a fatura do cartão sempre por inteiro</b><span>Se não conseguir, reduza o uso do cartão ou prefira o débito até recuperar o controle.</span></label>
+        </div>
+        <div class="checkitem">
+          <input type="checkbox" id="c5"><label for="c5"><b>Espere antes de comprar o que não é urgente</b><span>Anote o desejo, espere alguns dias e confira se ele cabe no orçamento sem parcelar.</span></label>
+        </div>
+        <div class="checkitem">
+          <input type="checkbox" id="c6"><label for="c6"><b>Some todas as parcelas e veja o peso na sua renda</b><span>Se passarem de cerca de 30%, pare de parcelar e priorize quitar o que já existe.</span></label>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:28px">
+        <span class="callout-label">SE JÁ ESTÁ DEVENDO</span>
+        <p>Liste cada dívida com credor, valor e taxa de juros. Priorize as de juros mais altos e procure o credor para renegociar. Não pague uma dívida com outra sem comparar o CET. Dívida não desaparece quando é ignorada: ela cresce.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="jogo">
+      <p class="chapter-eyebrow">CAPÍTULO 08</p>
+      <h2>Jogue: Corrida Sem Dívidas</h2>
+      <p>Dez perguntas sobre o que você acabou de ler. Cada acerto move o carro para o próximo trecho da pista — errou, o carro fica onde está até você acertar.</p>
+
+      <div class="game-track">
+        <div class="game-top">
+          <div class="level-label">NÍVEL <b id="levelNow">1</b> DE <span id="levelTotal">10</span></div>
+          <div class="game-stat-row">
+            <span>acertos: <b id="statCorrect">0</b></span>
+            <span>tentativas: <b id="statAttempts">0</b></span>
+          </div>
+        </div>
+        <div class="road">
+          <div class="road-base"></div>
+          <div class="road-line"></div>
+          <div class="checkpoints" id="checkpoints"></div>
+          <div class="car" id="car">🚗</div>
+          <div class="flag">🏁</div>
+        </div>
+      </div>
+
+      <div class="qcard" id="qcard">
+        <p class="chapter-tag" id="qTag">PERGUNTA 1 DE 10</p>
+        <h3 class="qtext" id="qText">Carregando pergunta…</h3>
+        <div class="options" id="options"></div>
+        <div class="game-feedback" id="feedback">
+          <span class="flabel" id="fLabel"></span>
+          <span id="fText"></span>
+        </div>
+        <div class="qactions">
+          <button class="btn btn-ghost" id="retryBtn" style="display:none">Tentar de novo</button>
+        </div>
+      </div>
+
+      <div class="game-finish" id="finish">
+        <div class="medal">🏆</div>
+        <h3>Você cruzou a linha de chegada</h3>
+        <p>Você passou pelas 10 perguntas sobre orçamento, juros, cartão, parcelas e golpes comuns.</p>
+        <div class="finish-stats">
+          <div><span class="k">acertos de primeira</span><span class="v" id="finFirstTry">0</span></div>
+          <div><span class="k">tentativas totais</span><span class="v" id="finAttempts">0</span></div>
+        </div>
+        <button class="btn btn-primary" id="replayBtn">Jogar de novo</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="fbrand">Primeiro Capítulo</p>
+    <p>Este material tem finalidade educativa e não constitui recomendação financeira. Os valores e taxas dos exemplos são ilustrativos. Para tirar dúvidas ou renegociar uma dívida, procure fontes oficiais, como o Banco Central e o Procon, ou um profissional certificado.</p>
+  </div>
+</footer>
+
+<script>
+  // active link highlight
+  const links = document.querySelectorAll('.index-col a, .topnav a');
+  const sections = document.querySelectorAll('section.chapter');
+  const setActive = () => {
+    let current = sections[0]?.id;
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  };
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+
+  // compound interest calculator
+  const fmt = n => 'R$ ' + n.toLocaleString('pt-BR', { maximumFractionDigits: 0 });
+  const fmt2 = n => 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const num = (id, min, max) => {
+    let v = parseFloat(document.getElementById(id).value);
+    if (isNaN(v)) v = 0;
+    v = Math.max(min, v);
+    return max === undefined ? v : Math.min(max, v);
+  };
+  const setText = (id, t) => { document.getElementById(id).textContent = t; };
+
+  function calcDebt() {
+    const p = num('dPrincipal', 0);
+    const i = num('dRate', 0) / 100;
+    const m = Math.round(num('dMonths', 0, 120));
+    const total = p * Math.pow(1 + i, m);
+    const interest = total - p;
+    setText('outOrig', fmt(p));
+    setText('outDebt', fmt(total));
+    setText('outInterest', fmt(interest));
+    const pct = total > 0 ? (p / total) * 100 : 100;
+    document.getElementById('barOrig').style.width = pct + '%';
+    document.getElementById('barInterest').style.width = (100 - pct) + '%';
+  }
+
+  function calcGoal() {
+    const price = num('gPrice', 0);
+    const saved = num('gSaved', 0);
+    const months = Math.max(1, Math.round(num('gMonths', 1, 120)));
+    const rest = Math.max(0, price - saved);
+    const monthly = rest / months;
+    setText('outRest', fmt(rest));
+    setText('outMonthly', fmt2(monthly));
+    setText('outWeekly', fmt2(monthly / 4.33));
+  }
+
+  ['dPrincipal', 'dRate', 'dMonths'].forEach(id => document.getElementById(id).addEventListener('input', calcDebt));
+  ['gPrice', 'gSaved', 'gMonths'].forEach(id => document.getElementById(id).addEventListener('input', calcGoal));
+  calcDebt();
+  calcGoal();
+
+  // ---------- jogo: corrida do investidor ----------
+  const questions = [
+    {
+      tag: "juros",
+      q: "Por que uma dívida pequena pode virar uma dívida grande quando ninguém paga?",
+      options: [
+        "Porque o credor muda o valor combinado todo mês sem avisar",
+        "Porque os juros também passam a incidir sobre os juros anteriores, e a dívida cresce cada vez mais rápido",
+        "Porque a dívida só aumenta quando você compra algo novo",
+        "Porque o banco cobra uma taxa fixa de atraso e depois para de cobrar"
+      ],
+      correct: 1,
+      explain: "São os juros compostos: o que foi cobrado em um mês entra na base de cálculo do mês seguinte, e a dívida acelera com o tempo."
+    },
+    {
+      tag: "reserva de emergência",
+      q: "Para quem quer evitar dívidas, qual é a principal função da reserva de emergência?",
+      options: [
+        "Pagar um imprevisto sem precisar recorrer ao cartão, ao cheque especial ou a um empréstimo",
+        "Substituir o orçamento mensal",
+        "Pagar as compras de fim de ano",
+        "Garantir que você nunca precise controlar seus gastos"
+      ],
+      correct: 0,
+      explain: "Com a reserva, um imprevisto não vira dívida cara. Sem ela, o caminho costuma ser o crédito mais caro do mercado."
+    },
+    {
+      tag: "cartão de crédito",
+      q: "Chegou a fatura do cartão. Qual é a atitude mais segura?",
+      options: [
+        "Pagar só o mínimo e deixar o restante para o mês seguinte",
+        "Ignorar até a próxima fatura",
+        "Pedir aumento de limite para conseguir pagar",
+        "Pagar o valor total, para não entrar no rotativo"
+      ],
+      correct: 3,
+      explain: "Pagando o total, você não paga juros. O mínimo deixa o restante no rotativo, uma das modalidades mais caras do mercado."
+    },
+    {
+      tag: "limite",
+      q: "O limite do cartão de crédito é...",
+      options: [
+        "uma renda extra que o banco paga todo mês",
+        "um presente que não precisa ser pago",
+        "um valor que o banco devolve se você não usar",
+        "dinheiro emprestado pelo banco, que você terá de pagar na fatura"
+      ],
+      correct: 3,
+      explain: "O limite é crédito, não renda. Tudo o que você gasta nele precisa ser pago depois."
+    },
+    {
+      tag: "parcelas",
+      q: "Qual é o risco de acumular várias compras parceladas, mesmo sem juros?",
+      options: [
+        "Nenhum, porque não há juros",
+        "As parcelas se somam e comprometem a renda dos próximos meses, sobrando pouco para imprevistos",
+        "O preço do produto sobe a cada parcela paga",
+        "O banco cancela o cartão automaticamente"
+      ],
+      correct: 1,
+      explain: "Mesmo sem juros, cada parcela ocupa uma fatia da renda futura. Várias juntas deixam o orçamento sem folga."
+    },
+    {
+      tag: "compra por impulso",
+      q: "Qual hábito ajuda a evitar compras por impulso?",
+      options: [
+        "Esperar alguns dias e conferir se a compra cabe no orçamento",
+        "Comprar logo, antes que o preço mude",
+        "Parcelar sempre no maior número de vezes",
+        "Comprar apenas em promoções relâmpago"
+      ],
+      correct: 0,
+      explain: "A espera tira a pressa. Muitas vezes a vontade passa ou você descobre que a compra não cabe no orçamento."
+    },
+    {
+      tag: "CET",
+      q: "O que o Custo Efetivo Total (CET) mostra?",
+      options: [
+        "Apenas a taxa de juros mensal",
+        "O custo completo do crédito, somando juros, tarifas, seguros e impostos",
+        "O valor do seu limite no cartão",
+        "A nota do seu histórico de pagamentos"
+      ],
+      correct: 1,
+      explain: "O CET é o preço real do crédito. É ele que permite comparar ofertas de forma justa."
+    },
+    {
+      tag: "orçamento",
+      q: "Na divisão 50/30/20 da renda, para que serve a fatia de 20%?",
+      options: [
+        "Pagar as contas fixas",
+        "Gastar com lazer sem culpa",
+        "Guardar dinheiro e quitar dívidas, se houver",
+        "Pagar apenas a fatura do cartão"
+      ],
+      correct: 2,
+      explain: "Os 20% são reservados para o futuro: formar a reserva, juntar para metas e quitar dívidas. Os 50% cobrem o essencial e os 30% ficam para desejos."
+    },
+    {
+      tag: "golpes",
+      q: "Alguém pede um pagamento adiantado para “limpar seu nome”. O que fazer?",
+      options: [
+        "Pagar logo para resolver rápido",
+        "Passar os dados do cartão para confirmar",
+        "Enviar foto do documento por mensagem",
+        "Desconfiar e negociar direto com o credor, por canais oficiais"
+      ],
+      correct: 3,
+      explain: "Cobrar adiantado para resolver dívida é sinal clássico de golpe. A negociação segura é feita diretamente com o credor, em canais oficiais."
+    },
+    {
+      tag: "dívidas",
+      q: "Se você já tem várias dívidas, qual é um bom primeiro passo?",
+      options: [
+        "Esconder o problema até passar",
+        "Fazer outro empréstimo qualquer, sem comparar o custo",
+        "Listar todas (credor, valor e juros), priorizar as de juros mais altos e negociar",
+        "Parar de olhar a conta bancária"
+      ],
+      correct: 2,
+      explain: "Enxergar o tamanho do problema é o começo. Com a lista, dá para priorizar as dívidas mais caras e negociar com cada credor."
+    }
+  ];
+
+  const gTotal = questions.length;
+  let gLevel = 0;
+  let gCorrectCount = 0;
+  let gAttempts = 0;
+  let gFirstTryCorrect = 0;
+  let gAnswered = false;
+  let gMissed = false;
+
+  const checkpointsEl = document.getElementById('checkpoints');
+  const carEl = document.getElementById('car');
+  const levelNowEl = document.getElementById('levelNow');
+  const statCorrectEl = document.getElementById('statCorrect');
+  const statAttemptsEl = document.getElementById('statAttempts');
+  const qTagEl = document.getElementById('qTag');
+  const qTextEl = document.getElementById('qText');
+  const optionsEl = document.getElementById('options');
+  const feedbackEl = document.getElementById('feedback');
+  const fLabelEl = document.getElementById('fLabel');
+  const fTextEl = document.getElementById('fText');
+  const retryBtn = document.getElementById('retryBtn');
+  const qcard = document.getElementById('qcard');
+  const gameTrackEl = document.querySelector('.game-track');
+  const finishEl = document.getElementById('finish');
+  const replayBtn = document.getElementById('replayBtn');
+
+  document.getElementById('levelTotal').textContent = gTotal;
+
+  function buildCheckpoints() {
+    checkpointsEl.innerHTML = '';
+    for (let i = 0; i < gTotal; i++) {
+      const d = document.createElement('div');
+      d.className = 'checkpoint';
+      d.dataset.i = i;
+      checkpointsEl.appendChild(d);
+    }
+  }
+
+  function updateTrack() {
+    const dots = checkpointsEl.querySelectorAll('.checkpoint');
+    dots.forEach((d, i) => {
+      d.classList.toggle('done', i < gLevel);
+      d.classList.toggle('now', i === gLevel);
+    });
+    const pct = gTotal > 1 ? (gLevel / (gTotal - 1)) * 92 : 0;
+    carEl.style.left = pct + '%';
+    levelNowEl.textContent = Math.min(gLevel + 1, gTotal);
+    statCorrectEl.textContent = gCorrectCount;
+    statAttemptsEl.textContent = gAttempts;
+  }
+
+  function renderQuestion() {
+    gAnswered = false;
+    gMissed = false;
+    feedbackEl.classList.remove('show', 'ok', 'bad');
+    retryBtn.style.display = 'none';
+    const item = questions[gLevel];
+    qTagEl.textContent = 'PERGUNTA ' + (gLevel + 1) + ' DE ' + gTotal + ' · ' + item.tag.toUpperCase();
+    qTextEl.textContent = item.q;
+    optionsEl.innerHTML = '';
+    item.options.forEach((opt, i) => {
+      const b = document.createElement('button');
+      b.className = 'opt';
+      b.textContent = opt;
+      b.addEventListener('click', () => handleAnswer(i, b));
+      optionsEl.appendChild(b);
+    });
+    updateTrack();
+  }
+
+  function handleAnswer(i, btn) {
+    if (gAnswered) return;
+    const item = questions[gLevel];
+    gAttempts++;
+    const allBtns = optionsEl.querySelectorAll('.opt');
+
+    if (i === item.correct) {
+      gAnswered = true;
+      if (!gMissed) gFirstTryCorrect++;
+      gCorrectCount++;
+      allBtns.forEach(b => b.disabled = true);
+      btn.classList.add('correct');
+      allBtns.forEach(b => { if (b !== btn) b.classList.add('dim'); });
+
+      fLabelEl.textContent = 'CORRETO';
+      fTextEl.textContent = item.explain;
+      feedbackEl.classList.add('show', 'ok');
+      feedbackEl.classList.remove('bad');
+
+      carEl.classList.add('zoom');
+      setTimeout(() => carEl.classList.remove('zoom'), 700);
+
+      gLevel++;
+      updateTrack();
+
+      if (gLevel >= gTotal) {
+        setTimeout(showFinish, 900);
+      } else {
+        setTimeout(renderQuestion, 1400);
+      }
+    } else {
+      gMissed = true;
+      btn.classList.add('wrong');
+      btn.disabled = true;
+      allBtns.forEach(b => b.disabled = true);
+
+      fLabelEl.textContent = 'AINDA NÃO';
+      fTextEl.textContent = 'Essa não foi a alternativa certa. Dê uma olhada nas opções de novo e tente outra vez.';
+      feedbackEl.classList.add('show', 'bad');
+      feedbackEl.classList.remove('ok');
+
+      gameTrackEl.classList.add('shake');
+      carEl.classList.add('shake');
+      setTimeout(() => { carEl.classList.remove('shake'); gameTrackEl.classList.remove('shake'); }, 400);
+
+      statAttemptsEl.textContent = gAttempts;
+      retryBtn.style.display = 'inline-block';
+    }
+  }
+
+  retryBtn.addEventListener('click', () => {
+    feedbackEl.classList.remove('show', 'ok', 'bad');
+    retryBtn.style.display = 'none';
+    const allBtns = optionsEl.querySelectorAll('.opt');
+    allBtns.forEach(b => { b.disabled = false; b.classList.remove('wrong', 'dim'); });
+  });
+
+  function showFinish() {
+    qcard.style.display = 'none';
+    finishEl.classList.add('show');
+    document.getElementById('finFirstTry').textContent = gFirstTryCorrect + ' / ' + gTotal;
+    document.getElementById('finAttempts').textContent = gAttempts;
+  }
+
+  replayBtn.addEventListener('click', () => {
+    gLevel = 0; gCorrectCount = 0; gAttempts = 0; gFirstTryCorrect = 0;
+    finishEl.classList.remove('show');
+    qcard.style.display = 'block';
+    buildCheckpoints();
+    renderQuestion();
+  });
+
+  buildCheckpoints();
+  renderQuestion();
+</script>
+
+</body>
+</html>
